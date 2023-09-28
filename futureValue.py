@@ -7,18 +7,17 @@
 #   compounding interest
 
 
-def future_value():
+def future_value():  # Function to ask for inputs and calculate the future value of a bank account
     present = float(input('\nEnter the present value of the account: '))
-    interest = float(input('Enter the monthly interest rate from 0-100%: '))
+    interest = float(input('Enter the monthly interest rate from 0-100%: '))  # Asking the user for inputs
     months = float(input('Enter the number of months: '))
 
-    future = present * (1 + interest / 100) ** months
+    future = present * (1 + interest / 100) ** months  # Formula to calculate the future value of the inputs
     change = future - present
 
-    print('\nWith an initial value of $', format(present, '0,.2f'), ', over a period of ', format(months, '0,.0f'), 
+    print('\nWith an initial value of $', format(present, '0,.2f'), ', over a period of ', format(months, '0,.0f'),   # Output of the program
         ' months, and an interest rate of ', interest, '% per month, the future value of your account will be: ', sep='')
     print('$', format(future, '0,.2f'), sep='')
     print('Thats an increase of $', format(change, '0,.2f'), '!\n', sep = '')
     
-future_value()
-
+future_value()  # Calling the actual function
