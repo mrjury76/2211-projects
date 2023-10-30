@@ -1,0 +1,53 @@
+    Test 1: #This test shows the program running normally
+Enter the present value of the account: 10000000
+Enter the monthly interest rate from 0-100%: 5
+Enter the number of months: 2
+
+With an initial value of $10,000,000.00, over a period of 2 months, and an interest rate of 5.0% per month, the future value of your account will be: 
+$11,025,000.00
+Thats an increase of $1,025,000.00!
+
+    Test 2: #This one shows it catching the unnumeric inputs
+Enter the present value of the account: One Million
+Enter the monthly interest rate from 0-100%: Ten Percent
+Enter the number of months: Two
+
+Please enter valid numeric values.
+
+Enter the present value of the account: 1000000   
+Enter the monthly interest rate from 0-100%: 10
+Enter the number of months: 2
+
+With an initial value of $1,000,000.00, over a period of 2 months, and an interest rate of 10.0% per month, the future value of your account will be:
+$1,210,000.00
+Thats an increase of $210,000.00!
+
+    Test 3: #This one shows the program catching the negative input
+Enter the present value of the account: 718526
+Enter the monthly interest rate from 0-100%: -3
+Enter the number of months: 10
+
+Please enter valid numeric values.
+
+Enter the present value of the account: 718526
+Enter the monthly interest rate from 0-100%: 3
+Enter the number of months: 10
+
+With an initial value of $718,526.00, over a period of 10 months, and an interest rate of 3.0% per month, the future value of your account will be:
+$965,638.86
+Thats an increase of $247,112.86!
+
+    Test 4: This test shows the program catching the input of 0
+Enter the present value of the account: 2345
+Enter the monthly interest rate from 0-100%: 0
+Enter the number of months: 20
+
+Please enter positive values within the specified range.
+
+Enter the present value of the account: 2345
+Enter the monthly interest rate from 0-100%: 10
+Enter the number of months: 20
+
+With an initial value of $2,345.00, over a period of 20 months, and an interest rate of 10.0% per month, the future value of your account will be:
+$15,775.99
+Thats an increase of $13,430.99!
