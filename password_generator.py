@@ -48,7 +48,7 @@ def validate_password():
             break
 
         elif(flag == False):
-            if(x==0):
+            if(x==1):
                 print("\nYou have used all your attempts\nPlease try again :)")
             else:
                 print("\nYou have", x-1, "attempts remaining\n")
