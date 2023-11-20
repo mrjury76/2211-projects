@@ -1,12 +1,36 @@
 # Author: Patrick Thrower
 # Student ID: T00620480
-# Date: Sept 8, 2023
-# Version: 1.0
-# Description: A program that takes codes from a file checks codes for validity or if their restricted or not
+# Date: Nov 19, 2023
+# Version: 2.0
+# Description: A program that takes codes from a file, checks codes for validity or if their restricted or not
 
-valid_codes = []
-invalid_codes = []
-invalid_restricted_codes = []
+def main(): 
+    valid_codes = []   #declaring the multiple code arrays
+    invalid_codes = []
+    invalid_restricted_codes = []
+
+    with open('A3 Codes.txt', 'r') as file:  # Opens the Codes.txt file and reads input line by line
+        product_codes = file.read().splitlines()
+    
+    for code in product_codes:   # loop that checks in order, if the code is valid and not restricted, if the code is valid and is restricted, and if the code is not valid and appends them to the appropriate array
+        if is_valid_code(code) and not is_restricted(code):
+            valid_codes.append(code)
+        elif is_valid_code(code) and is_restricted(code):
+            invalid_restricted_codes.append(code)
+        elif not is_valid_code(code):
+            invalid_codes.append(code)
+    
+    print("Valid Code(s) are:")  # prints the valid codes in the valid_codes array
+    for code in valid_codes:
+        print(code)
+    
+    print("\nInvalid Code(s) are:") # prints the invalid codes in the invalid_codes array
+    for code in invalid_codes:
+        print(code)
+    
+    print("\nInvalid Restricted Code(s) are:") # prints the restricted codes in the invalid_restricted_codes array
+    for code in invalid_restricted_codes:
+        print(code)
 
 def is_valid_code(input):  # Checks if the code is valid
     if (len(input) < 10):  # Checks if the code is 10 digits or longer
@@ -22,25 +46,4 @@ def is_restricted(input): # Checks if the security digit is "R" and that the cod
         return True
     return False
 
-with open('Codes.txt', 'r') as file:  # Opens the Codes.txt file and reads input line by line
-    product_codes = file.read().splitlines()
-
-for code in product_codes:
-    if is_valid_code(code) and not is_restricted(code):
-        valid_codes.append(code)
-    elif is_valid_code(code) and is_restricted(code):
-        invalid_restricted_codes.append(code)
-    elif not is_valid_code(code):
-        invalid_codes.append(code)
-
-print("Valid Code(s) are:")
-for code in valid_codes:
-    print(code)
-
-print("\nInvalid Code(s) are:")
-for code in invalid_codes:
-    print(code)
-
-print("\nInvalid Restricted Code(s) are:")
-for code in invalid_restricted_codes:
-    print(code)
+main()
